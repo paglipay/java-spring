@@ -58,7 +58,7 @@ jobs:
     environment:
       name: 'Development'
 #       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-      url: 'https://paglipay-cicd.azurewebsites.net'
+      url: 'https://paglipay-java-demo.azurewebsites.net'
     
     steps:
       - name: Download artifact from build job
@@ -71,6 +71,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
 #           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          app-name: 'paglipay-cicd'
+          app-name: 'paglipay-java-demo'
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: '*.jar'
