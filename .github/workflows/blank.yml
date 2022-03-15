@@ -34,3 +34,20 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - uses: actions/checkout@v2
+
+      - name: Set up Java version
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ env.JAVA_VERSION }}
+          cache: 'maven'
+
+      - name: Build with Maven
+        run: mvn -f trial_by_combat/pom.xml clean install
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: java-app
+          path: '${{ github.workspace }}/trial_by_combat/target/*.jar'
