@@ -5,7 +5,7 @@ server:
     
 spring:
   application: 
-    name: pawroledp2
+    name: paglipay-java-demo
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://paglipay-postgres.postgres.database.azure.com:5432/postgres
