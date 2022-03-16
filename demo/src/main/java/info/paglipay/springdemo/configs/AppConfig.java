@@ -11,10 +11,10 @@ import org.springframework.web.filter.CorsFilter;
 @Component
 public class AppConfig {
 
-//  @Bean
-//  public BCryptPasswordEncoder encodePassword() {
-//    return new BCryptPasswordEncoder();
-//  }
+  @Bean
+  public BCryptPasswordEncoder encodePassword() {
+    return new BCryptPasswordEncoder();
+  }
 
   @Bean
   public CorsFilter corsFilter() {
