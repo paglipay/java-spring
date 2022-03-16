@@ -59,7 +59,7 @@ public class AuthController {
         .ok()
         .header(
           HttpHeaders.AUTHORIZATION,
-          "jwtTokenUtil.generateAccessToken(user)"
+          jwtTokenUtil.generateAccessToken(user)
         )
         .body(retUser);
     } catch (BadCredentialsException ex) {
